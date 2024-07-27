@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tab - Login</title>
+  <link rel="shortcut icon" type="image/png" href="./assets/images/logos/dark-logo.jpg" />
+  <link rel="stylesheet" href="./assets/css/styles.min.css" />
+</head>
+
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <div
+      class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
+      <div class="d-flex align-items-center justify-content-center w-100">
+        <div class="row justify-content-center w-100">
+          <div class="col-md-8 col-lg-6 col-xxl-3">
+            <div class="card mb-0">
+              <div class="card-body">
+                <a href="./index.html" class="text-nowrap logo-img text-center d-block py-3 w-100">
+                  <img src="./assets/images/logos/dark-logo.jpg" width="180" alt="">
+                </a>
+                <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  Success
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div> -->
+
+                <!-- <p class="text-center">Tab Library Management System Software</p> -->
+                <form onSubmit="loginUser(); return false;">
+                  <label for="username">Email</label><br>
+                  <input class="form-control" type="email" id="username" name="username" autocomplete="on" required><br>
+                  <label for="password">Password</label><br>
+                  <input class="form-control" type="text" id="password" name="password" autocomplete="on"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    required><br><br>
+                  <input class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" type="submit" value="Log In">
+                  <div class="d-flex justify-content-between">
+                    <a class="btn btn-link fs-4 mb-4" href="./register.html">Register</a>
+                    <a class="btn btn-link fs-4 mb-4 col-4" href="./register.html">Forgot Password</a>
+                  </div>
+                </form>
+
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <!-- <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title">Log In Status</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+                      </div>
+                      <div class="modal-body">
+                        <p class="modal-text"></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"
+                          aria-label="Close">Close</button>
+                      </div>
+                    </div> -->
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/customjs/login.js"></script>
+</body>
+
+</html>

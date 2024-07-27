@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Download Invoice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="./assets/images/logos/dark-logo.jpg" />
+    <link rel="stylesheet" href="./assets/css/styles.min.css" />
+    <style>
+        body {
+            margin-top: 20px;
+        }
+
+        @media print {
+            @page {
+                size: auto;
+                /* auto is the initial value */
+                margin: 0mm;
+                /* Reset default margin */
+            }
+
+            body {
+                margin-top: 20%;
+                /* Reset body margin */
+            }
+
+            .footer {
+                display: none !important;
+                /* Hide the footer */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+            <div class="brand-logo d-flex align-items-center justify-content-between">
+                <a href="./index.html" class="text-nowrap logo-img">
+                    <img src="./assets/images/logos/dark-logo.jpg" width="180" alt="" />
+                </a>
+                <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                    <i class="ti ti-x fs-8"></i>
+                </div>
+            </div>
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                <ul id="sidebarnav">
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Home</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./index.html" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-layout-dashboard"></i>
+                            </span>
+                            <span class="hide-menu">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">UI COMPONENTS</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./checkavailableseat.html" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-file-description"></i>
+                            </span>
+                            <span class="hide-menu">Check Availability</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./sheetcheck.html" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-article"></i>
+                            </span>
+                            <span class="hide-menu">Seat Allotment Data</span>
+                        </a>
+                    </li>
+
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./studentdata.html" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-file-description"></i>
+                            </span>
+                            <span class="hide-menu">Student Data</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./registration.html" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-file-description"></i>
+                            </span>
+                            <span class="hide-menu">Student Registration</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./invoice.html" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-typography"></i>
+                            </span>
+                            <span class="hide-menu">Invoice</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <div id="printInvoiceDiv" style="color: #333; width: 100%;" width="100%">
+        <table cellspacing="0" style="border-collapse: collapse; padding: 10px; width: 100%;" width="100%">
+            <tbody>
+                <tr>
+                    <td width="5px" style="padding: 0;"></td>
+                    <td style="clear: both; display: block; margin: 0 auto; max-width: 600px; padding: 10px 0;">
+                        <table width="100%" cellspacing="0" style="border-collapse: collapse;">
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 0;">
+                                        <a href="#" style="color: #348eda;" target="_blank">
+                                            <img src="./assets/images/logos/dark-logo.jpg" alt="Bootdey.com"
+                                                style="height: 100px; max-width: 100%; width: 100px;" height="50"
+                                                width="157" />
+                                        </a>
+                                    </td>
+                                    <td style="color: #999; font-size: 12px; padding: 0; text-align: right;"
+                                        align="right">
+                                        Invoice Location: <strong>Lucknow</strong><br />
+                                        Invoice Date: <strong id="invoiceDate"> March 20, 2024</strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td width="5px" style="padding: 0;"></td>
+                </tr>
+
+                <tr>
+                    <td width="5px" style="padding: 0;"></td>
+                    <td bgcolor="#FFFFFF"
+                        style="border: 1px solid #000; clear: both; display: block; margin: 0 auto; max-width: 600px; padding: 0;">
+                        <table width="100%"
+                            style="background: #f9f9f9; border-bottom: 1px solid #eee; border-collapse: collapse; color: #999;">
+                            <tbody>
+                                <tr>
+                                    <td width="50%" style="padding: 20px;">Total: <strong id="totalFees"
+                                            style="color: #333; font-size: 20px;">&#8377;23.95</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td width="5px" style="padding: 0;"></td>
+                    <td
+                        style="border: 1px solid #000; border-top: 0; clear: both; display: block; margin: 0 auto; max-width: 600px; padding: 0;">
+                        <table cellspacing="0"
+                            style="border-collapse: collapse; border-left: 1px solid #000; margin: 0 80px; max-width: 600px;">
+                            <tbody>
+                                <tr>
+                                    <td valign="top" style="padding: 30px;">
+                                        <h3 style="
+                                            border-bottom: 1px solid #000;
+                                            color: #000;
+                                            font-family: 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+                                            font-size: 18px;
+                                            font-weight: bold;
+                                            line-height: 1.2;
+                                            min-width: 400px;
+                                            margin: 0;
+                                            margin-bottom: 15px;
+                                            padding-bottom: 5px;
+                                        ">
+                                            Summary
+                                        </h3>
+                                        <table cellspacing="0"
+                                            style="border-collapse: collapse; margin-bottom: 40px; min-width: 400px;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="padding: 5px 0;">Name</td>
+                                                    <td id="name" align="right" style="padding: 5px 0;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 5px 0;">Timing</td>
+                                                    <td id="shiftTime" align="right" style="padding: 5px 0;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 5px 0; margin-right: 50px">Plan End</td>
+                                                    <td id="shiftEndDate" align="right" style="padding: 5px 0;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 5px 0; margin-right: 50px">Seat Number</td>
+                                                    <td id="seatNumber" align="right" style="padding: 5px 0;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 5px 0;">Total Hours</td>
+                                                    <td id="hours" align="right" style="padding: 5px 0;"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding: 5px 0;">Total Fees</td>
+                                                    <td id="fees" align="right" style="padding: 5px 0;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td
+                                                        style="border-bottom: 2px solid #000; border-top: 2px solid #000; font-weight: bold; padding: 5px 0;">
+                                                        Amount paid</td>
+                                                    <td id="amountFees" align="right"
+                                                        style="border-bottom: 2px solid #000; border-top: 2px solid #000; font-weight: bold; padding: 5px 0;">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr style="color: #666; font-size: 12px;">
+                    <td width="5px" style="padding: 10px 0;"></td>
+                    <td style="clear: both; display: block; margin: 0 auto; max-width: 600px; padding: 10px 0;">
+                        <table width="100%" cellspacing="0" style="border-collapse: collapse;">
+                            <tbody>
+                                <tr>
+                                    <td width="60%" style="padding: 10px 0;">&nbsp;</td>
+                                    <td width="40%" valign="top" style="padding: 10px 0;">
+                                        <h4 style="margin: 0;"><span class="il">The Artist Barefoot</span></h4>
+                                        <p
+                                            style="color: #666; font-size: 12px; font-weight: normal; margin-bottom: 10px;">
+                                            <a href="#">Lucknow</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-7">
+
+        </div>
+        <div class="col-2">
+            <button class="btn btn-primary" id="saveAsPdfButton">Save as PDF</button>
+        </div>
+    </div>
+
+    <script src="./assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="./assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/sidebarmenu.js"></script>
+    <script src="./assets/js/app.min.js"></script>
+    <script src="./assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="./assets/customjs/invoice.js"></script>
+    <script src="./assets/customjs/logout.js"></script>
+    <script>
+        function printDiv() {
+            var printContents = document.getElementById('printInvoiceDiv').innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+        }
+        document.getElementById('saveAsPdfButton').addEventListener('click', function () {
+
+            // Create a style element
+            console.log('Called');
+            printDiv();
+
+            // const element = document.querySelector('#printInvoiceDiv');
+
+            // const options = {
+            //     filename: 'invoice.pdf',
+            //     margin: 0,
+            //     html2canvas: { scale: 1, width: $(window).width(), height: $(window).height() },
+            //     jsPDF: { unit: 'mm', format: 'letter', orientation: 'portrait' },
+            // };
+
+            // html2pdf()
+            //     .set(options)
+            //     .from(element)
+            //     .save()
+            //     .catch(error => {
+            //         console.error('Error occurred while saving PDF:', error);
+            //     });;
+        });
+    </script>
+    <script>
+        let invoiceDate = localStorage.getItem('invoiceDate');
+        let totalFees = localStorage.getItem('totalFees');
+        let name = localStorage.getItem('name');
+        let time = localStorage.getItem('shiftTime');
+        let shiftEndDate = localStorage.getItem('shiftEndDate');
+        let hours = localStorage.getItem('hours');
+        let seatNumber = localStorage.getItem('seatNumber');
+        let fees = localStorage.getItem('fees');
+        let amountFees = localStorage.getItem('amountFees');
+
+        document.getElementById('invoiceDate').innerHTML = invoiceDate;
+        document.getElementById('totalFees').innerHTML = totalFees;
+        document.getElementById('name').innerHTML = name;
+        document.getElementById('shiftTime').innerHTML = time;
+        document.getElementById('shiftEndDate').innerHTML = shiftEndDate;
+        document.getElementById('seatNumber').innerHTML = seatNumber;
+        document.getElementById('hours').innerHTML = hours;
+        document.getElementById('fees').innerHTML = fees;
+        document.getElementById('amountFees').innerHTML = amountFees;
+    </script>
+</body>
+
+</html>
